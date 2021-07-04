@@ -1,21 +1,21 @@
-var officialTechSis = new Date ("Jul 30, 2022 12:00:00").getTime();
-var myFunc = setInterval(function() {
-    var now = new Date().getTime();
-    var timeleft = officialTechSis - now ;
+let officialTechSis = new Date ("Jul 31, 2022 12:00:00").getTime();
+let myFunc = setInterval(function() {
+    let now = new Date().getTime();
+    let timeleft = officialTechSis - now ;
     
-    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24)); 
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 *24))/(1000 * 60 * 60));
-    var minutes = Math.floor((timeleft  % ( 1000 * 60 * 60)) / (1000 * 60 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    let days = Math.floor(timeleft / (1000 * 60 * 60 * 24)); 
+    let hours = Math.floor((timeleft % (1000 * 60 * 60 *24))/(1000 * 60 * 60));
+    let minutes = Math.floor((timeleft  % ( 1000 * 60 * 60 )) / (1000 * 60 ));
+    let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-
-    document.getElementById("days").innerHTML = days + "d  "
-    document.getElementById("hours").innerHTML = hours + "  h  "
-    document.getElementById("minutes").innerHTML = minutes + " m "
-    document.getElementById("seconds").innerHTML = seconds + " s "
+    document.getElementById("days").innerHTML = days + "days  "
+    document.getElementById("hours").innerHTML = hours + "  hr "
+    document.getElementById("minutes").innerHTML = minutes + " mins "
+    document.getElementById("seconds").innerHTML = seconds + " secs "
     
     if(timeleft < 0) {
         clearInterval(myFunc);
+    
         document.getElementById("days").innerHTML = " "
         document.getElementById("hours").innerHTML = "  "
         document.getElementById("minutes").innerHTML = " "
